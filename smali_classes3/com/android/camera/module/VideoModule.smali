@@ -2678,7 +2678,7 @@
     .line 24
     iget-object v2, p0, Lcom/android/camera/module/VideoBase;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    iget-object v5, p0, Lcom/android/camera/module/VideoBase;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+    iget-object v5, p0, Lcom/android/camera/module/BaseModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
 
     invoke-virtual {v2, v5, v4}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
@@ -3147,7 +3147,7 @@
     .line 40
     iget-object v0, p0, Lcom/android/camera/module/VideoBase;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    iget-object v1, p0, Lcom/android/camera/module/VideoBase;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+    iget-object v1, p0, Lcom/android/camera/module/BaseModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
 
     const/16 v2, 0x20
 

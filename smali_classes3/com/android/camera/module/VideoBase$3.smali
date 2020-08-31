@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/camera/module/VideoBase;->enterSavePowerMode()V
+    value = Lcom/android/camera/module/VideoBase;->exitSavePowerMode()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/android/camera/module/VideoBase$3;->this$0:Lcom/android/camera/module/VideoBase;
@@ -45,15 +45,13 @@
 
     if-eqz v0, :cond_0
 
-    const/16 v1, 0x51
-
     .line 2
-    invoke-virtual {v0, v1}, Lcom/android/camera/Camera;->setWindowBrightness(I)V
+    invoke-virtual {v0}, Lcom/android/camera/Camera;->restoreWindowBrightness()V
 
     .line 3
     iget-object p0, p0, Lcom/android/camera/module/VideoBase$3;->this$0:Lcom/android/camera/module/VideoBase;
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/module/VideoBase;->mSavePowerMode:Z
 

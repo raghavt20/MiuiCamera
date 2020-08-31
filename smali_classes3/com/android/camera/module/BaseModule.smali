@@ -199,6 +199,8 @@
 
 .field protected mPendingScreenSlideKeyCode:I
 
+.field protected final mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+
 .field protected mPictureSize:Lcom/android/camera/CameraSize;
 
 .field protected mPreZoomRation:F
@@ -377,6 +379,13 @@
     iput v0, p0, Lcom/android/camera/module/BaseModule;->mTriggerMode:I
 
     .line 20
+    new-instance v0, Lcom/android/camera/module/BaseModule$4;
+
+    invoke-direct {v0, p0}, Lcom/android/camera/module/BaseModule$4;-><init>(Lcom/android/camera/module/BaseModule;)V
+
+    iput-object v0, p0, Lcom/android/camera/module/BaseModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+
+    .line 21
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -387,7 +396,7 @@
 
     iput-wide v0, p0, Lcom/android/camera/module/BaseModule;->mMainThreadId:J
 
-    .line 21
+    .line 22
     new-instance v0, Lcom/android/camera/preferences/SettingsOverrider;
 
     invoke-direct {v0}, Lcom/android/camera/preferences/SettingsOverrider;-><init>()V

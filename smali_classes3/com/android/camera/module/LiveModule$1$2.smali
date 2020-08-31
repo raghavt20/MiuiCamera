@@ -1,4 +1,4 @@
-.class Lcom/android/camera/module/LiveModule$2$2;
+.class Lcom/android/camera/module/LiveModule$1$2;
 .super Ljava/lang/Object;
 .source "LiveModule.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/camera/module/LiveModule$2;->run()V
+    value = Lcom/android/camera/module/LiveModule$1;->run()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,15 +18,15 @@
 
 
 # instance fields
-.field final synthetic this$1:Lcom/android/camera/module/LiveModule$2;
+.field final synthetic this$1:Lcom/android/camera/module/LiveModule$1;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/camera/module/LiveModule$2;)V
+.method constructor <init>(Lcom/android/camera/module/LiveModule$1;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/android/camera/module/LiveModule$2$2;->this$1:Lcom/android/camera/module/LiveModule$2;
+    iput-object p1, p0, Lcom/android/camera/module/LiveModule$1$2;->this$1:Lcom/android/camera/module/LiveModule$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

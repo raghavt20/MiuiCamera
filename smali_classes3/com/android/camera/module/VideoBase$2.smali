@@ -1,11 +1,14 @@
 .class Lcom/android/camera/module/VideoBase$2;
-.super Landroid/telephony/PhoneStateListener;
+.super Ljava/lang/Object;
 .source "VideoBase.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/camera/module/VideoBase;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/camera/module/VideoBase;->enterSavePowerMode()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,42 +28,35 @@
     .line 1
     iput-object p1, p0, Lcom/android/camera/module/VideoBase$2;->this$0:Lcom/android/camera/module/VideoBase;
 
-    invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onCallStateChanged(ILjava/lang/String;)V
+.method public run()V
     .locals 2
-
-    const/4 v0, 0x2
-
-    if-ne p1, v0, :cond_0
 
     .line 1
     iget-object v0, p0, Lcom/android/camera/module/VideoBase$2;->this$0:Lcom/android/camera/module/VideoBase;
 
-    iget-boolean v0, v0, Lcom/android/camera/module/VideoBase;->mMediaRecorderRecording:Z
+    iget-object v0, v0, Lcom/android/camera/module/BaseModule;->mActivity:Lcom/android/camera/Camera;
 
     if-eqz v0, :cond_0
 
+    const/16 v1, 0x51
+
     .line 2
-    sget-object v0, Lcom/android/camera/module/VideoBase;->TAG:Ljava/lang/String;
-
-    const-string v1, "CALL_STATE_OFFHOOK"
-
-    invoke-static {v0, v1}, Lcom/android/camera/log/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Lcom/android/camera/Camera;->setWindowBrightness(I)V
 
     .line 3
-    iget-object v0, p0, Lcom/android/camera/module/VideoBase$2;->this$0:Lcom/android/camera/module/VideoBase;
+    iget-object p0, p0, Lcom/android/camera/module/VideoBase$2;->this$0:Lcom/android/camera/module/VideoBase;
 
-    invoke-virtual {v0}, Lcom/android/camera/module/BaseModule;->onStop()V
+    const/4 v0, 0x1
 
-    .line 4
+    iput-boolean v0, p0, Lcom/android/camera/module/VideoBase;->mSavePowerMode:Z
+
     :cond_0
-    invoke-super {p0, p1, p2}, Landroid/telephony/PhoneStateListener;->onCallStateChanged(ILjava/lang/String;)V
-
     return-void
 .end method

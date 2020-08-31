@@ -3,7 +3,7 @@
 .source "MiLiveModule.java"
 
 # interfaces
-.implements Lcom/android/camera/protocol/ModeProtocol$MiLiveRecorderControl$IRecorderListener;
+.implements Lcom/android/camera/SensorStateManager$SensorStateListener;
 
 
 # annotations
@@ -35,261 +35,196 @@
 
 
 # virtual methods
-.method public onRecorderCancel()V
-    .locals 2
+.method public isWorking()Z
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
 
-    invoke-static {v0}, Lcom/android/camera/module/MiLiveModule;->access$300(Lcom/android/camera/module/MiLiveModule;)Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/camera/module/BaseModule;->isAlive()Z
 
-    move-result-object v0
+    move-result v0
 
-    const-string v1, "onRecorderCancel"
+    if-eqz v0, :cond_0
 
-    invoke-static {v0, v1}, Lcom/android/camera/log/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2
     iget-object p0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
 
-    invoke-static {p0}, Lcom/android/camera/module/MiLiveModule;->access$600(Lcom/android/camera/module/MiLiveModule;)V
+    invoke-virtual {p0}, Lcom/android/camera/module/BaseModule;->getCameraState()I
 
-    return-void
-.end method
+    move-result p0
 
-.method public onRecorderError()V
-    .locals 2
+    if-eqz p0, :cond_0
 
-    .line 1
-    iget-object v0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    invoke-static {v0}, Lcom/android/camera/module/MiLiveModule;->access$300(Lcom/android/camera/module/MiLiveModule;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "onRecorderError"
-
-    invoke-static {v0, v1}, Lcom/android/camera/log/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2
-    iget-object p0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    invoke-static {p0}, Lcom/android/camera/module/MiLiveModule;->access$600(Lcom/android/camera/module/MiLiveModule;)V
-
-    return-void
-.end method
-
-.method public onRecorderFinish(Ljava/util/List;Ljava/lang/String;)V
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Lcom/android/camera/module/impl/component/ILive$ILiveSegmentData;",
-            ">;",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_0
-
-    .line 1
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    if-lez v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    .line 2
-    invoke-static {v2}, Lcom/android/camera/module/MiLiveModule;->access$500(Lcom/android/camera/module/MiLiveModule;)Lcom/android/camera/protocol/ModeProtocol$MiLiveConfigChanges;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Lcom/android/camera/protocol/ModeProtocol$LiveSpeedChanges;->getTotalRecordingTime()J
-
-    move-result-wide v2
-
-    const-wide/16 v4, 0x1f4
-
-    cmp-long v2, v2, v4
-
-    if-ltz v2, :cond_0
-
-    move v2, v0
+    const/4 p0, 0x1
 
     goto :goto_0
 
     :cond_0
-    move v2, v1
+    const/4 p0, 0x0
 
     :goto_0
-    if-nez v2, :cond_1
+    return p0
+.end method
 
-    .line 3
-    iget-object p1, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
+.method public notifyDevicePostureChanged()V
+    .locals 0
 
-    invoke-static {p1}, Lcom/android/camera/module/MiLiveModule;->access$300(Lcom/android/camera/module/MiLiveModule;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string p2, "onFinish of no segments !!"
-
-    invoke-static {p1, p2}, Lcom/android/camera/log/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 4
-    iget-object p1, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    invoke-static {p1}, Lcom/android/camera/module/MiLiveModule;->access$600(Lcom/android/camera/module/MiLiveModule;)V
-
-    goto :goto_1
-
-    .line 5
-    :cond_1
-    iget-object v3, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    iget-object v4, v3, Lcom/android/camera/module/MiLiveModule;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    iget-object v3, v3, Lcom/android/camera/module/MiLiveModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
-    invoke-virtual {v4, v3, v1}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
-
-    .line 6
-    iget-object v3, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    invoke-static {v3}, Lcom/android/camera/module/MiLiveModule;->access$300(Lcom/android/camera/module/MiLiveModule;)Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "listen none"
-
-    invoke-static {v3, v4}, Lcom/android/camera/log/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 7
-    iget-object v3, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    invoke-static {v3}, Lcom/android/camera/module/MiLiveModule;->access$700(Lcom/android/camera/module/MiLiveModule;)V
-
-    .line 8
-    iget-object v3, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    invoke-static {v3, p1, p2}, Lcom/android/camera/module/MiLiveModule;->access$800(Lcom/android/camera/module/MiLiveModule;Ljava/util/List;Ljava/lang/String;)V
-
-    :goto_1
-    xor-int/lit8 p1, v2, 0x1
-
-    .line 9
-    iget-object p2, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    iget v0, p2, Lcom/android/camera/module/BaseModule;->mPreZoomRation:F
-
-    invoke-virtual {p2}, Lcom/android/camera/module/BaseModule;->getZoomRatio()F
-
-    move-result v2
-
-    const/4 v3, -0x1
-
-    invoke-virtual {p2, v0, v2, v3}, Lcom/android/camera/module/BaseModule;->onInterceptZoomingEvent(FFI)Z
-
-    if-eqz p1, :cond_3
-
-    .line 10
-    sget-boolean p1, Lcom/android/camera/HybridZoomingSystem;->IS_3_OR_MORE_SAT:Z
-
-    if-eqz p1, :cond_3
-
-    iget-object p1, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    invoke-virtual {p1}, Lcom/android/camera/module/BaseModule;->isBackCamera()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    .line 11
-    iget-object p1, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    invoke-virtual {p1, v1}, Lcom/android/camera/module/BaseModule;->updateZoomRatioToggleButtonState(Z)V
-
-    .line 12
-    iget-object p1, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    invoke-virtual {p1}, Lcom/android/camera/module/BaseModule;->isUltraWideBackCamera()Z
-
-    move-result p1
-
-    const p2, 0x3f19999a    # 0.6f
-
-    if-eqz p1, :cond_2
-
-    .line 13
-    iget-object p1, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    invoke-virtual {p1, p2}, Lcom/android/camera/module/BaseModule;->setMinZoomRatio(F)V
-
-    .line 14
+    .line 1
     iget-object p0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
 
-    iget-object p1, p0, Lcom/android/camera/module/BaseModule;->mCameraCapabilities:Lcom/android/camera2/CameraCapabilities;
+    iget-object p0, p0, Lcom/android/camera/module/BaseModule;->mActivity:Lcom/android/camera/Camera;
 
-    invoke-virtual {p1}, Lcom/android/camera2/CameraCapabilities;->getMaxZoomRatio()F
+    invoke-virtual {p0}, Lcom/android/camera/ActivityBase;->getEdgeShutterView()Lcom/android/camera/ui/V9EdgeShutterView;
 
-    move-result p1
+    move-result-object p0
 
-    mul-float/2addr p1, p2
+    invoke-virtual {p0}, Lcom/android/camera/ui/V9EdgeShutterView;->onDevicePostureChanged()V
 
-    invoke-virtual {p0, p1}, Lcom/android/camera/module/BaseModule;->setMaxZoomRatio(F)V
-
-    goto :goto_2
-
-    .line 15
-    :cond_2
-    iget-object p1, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    invoke-virtual {p1, p2}, Lcom/android/camera/module/BaseModule;->setMinZoomRatio(F)V
-
-    .line 16
-    iget-object p0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
-
-    const/high16 p1, 0x40c00000    # 6.0f
-
-    iget-object p2, p0, Lcom/android/camera/module/BaseModule;->mCameraCapabilities:Lcom/android/camera2/CameraCapabilities;
-
-    invoke-virtual {p2}, Lcom/android/camera2/CameraCapabilities;->getMaxZoomRatio()F
-
-    move-result p2
-
-    invoke-static {p1, p2}, Ljava/lang/Math;->min(FF)F
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Lcom/android/camera/module/BaseModule;->setMaxZoomRatio(F)V
-
-    :cond_3
-    :goto_2
     return-void
 .end method
 
-.method public onRecorderPaused(Ljava/util/List;)V
+.method public onDeviceBecomeStable()V
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
+
+    invoke-static {p0}, Lcom/android/camera/module/MiLiveModule;->access$500(Lcom/android/camera/module/MiLiveModule;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "onDeviceBecomeStable"
+
+    invoke-static {p0, v0}, Lcom/android/camera/log/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public onDeviceBeginMoving()V
     .locals 0
-    .param p1    # Ljava/util/List;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Lcom/android/camera/module/impl/component/ILive$ILiveSegmentData;",
-            ">;)V"
-        }
-    .end annotation
+
+    return-void
+.end method
+
+.method public onDeviceKeepMoving(D)V
+    .locals 7
+
+    .line 1
+    iget-object v0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
+
+    iget-object v0, v0, Lcom/android/camera/module/BaseModule;->mMainProtocol:Lcom/android/camera/protocol/ModeProtocol$MainContentProtocol;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Lcom/android/camera/protocol/ModeProtocol$IndicatorProtocol;->isEvAdjusted(Z)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
+
+    iget-boolean v0, v0, Lcom/android/camera/module/BaseModule;->mPaused:Z
+
+    if-nez v0, :cond_0
+
+    .line 2
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v1
+
+    iget-object v0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
+
+    invoke-static {v0}, Lcom/android/camera/module/MiLiveModule;->access$900(Lcom/android/camera/module/MiLiveModule;)J
+
+    move-result-wide v3
+
+    const-wide/16 v5, 0xbb8
+
+    invoke-static/range {v1 .. v6}, Lcom/android/camera/Util;->isTimeout(JJJ)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
+
+    .line 3
+    invoke-virtual {v0}, Lcom/android/camera/module/MiLiveModule;->is3ALocked()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 4
+    iget-object v0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
+
+    invoke-static {v0}, Lcom/android/camera/module/MiLiveModule;->access$1000(Lcom/android/camera/module/MiLiveModule;)Lcom/android/camera/module/loader/camera2/FocusManager2;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
+
+    invoke-static {v0}, Lcom/android/camera/module/MiLiveModule;->access$1000(Lcom/android/camera/module/MiLiveModule;)Lcom/android/camera/module/loader/camera2/FocusManager2;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/camera/module/loader/camera2/FocusManager2;->isNeedCancelAutoFocus()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 5
+    iget-object v0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
+
+    invoke-virtual {v0}, Lcom/android/camera/module/MiLiveModule;->isRecording()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 6
+    iget-object p0, p0, Lcom/android/camera/module/MiLiveModule$2;->this$0:Lcom/android/camera/module/MiLiveModule;
+
+    invoke-static {p0}, Lcom/android/camera/module/MiLiveModule;->access$1000(Lcom/android/camera/module/MiLiveModule;)Lcom/android/camera/module/loader/camera2/FocusManager2;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1, p2}, Lcom/android/camera/module/loader/camera2/FocusManager2;->onDeviceKeepMoving(D)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public onDeviceKeepStable()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onDeviceLieChanged(Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onDeviceOrientationChanged(FZ)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onDeviceRotationChanged([F)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 0
 
     return-void
 .end method

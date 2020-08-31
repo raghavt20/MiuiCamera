@@ -64,7 +64,7 @@
     .line 2
     iget-object p0, p0, Lcom/android/camera/module/LiveModule$LiveAsdConsumer;->this$0:Lcom/android/camera/module/LiveModule;
 
-    invoke-static {p0, p1}, Lcom/android/camera/module/LiveModule;->access$600(Lcom/android/camera/module/LiveModule;Ljava/lang/Integer;)V
+    invoke-static {p0, p1}, Lcom/android/camera/module/LiveModule;->access$500(Lcom/android/camera/module/LiveModule;Ljava/lang/Integer;)V
 
     return-void
 .end method

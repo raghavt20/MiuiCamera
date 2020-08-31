@@ -68,7 +68,7 @@
 
     move-result p1
 
-    invoke-static {p0, p1}, Lcom/android/camera/module/LiveModuleSubVV;->access$600(Lcom/android/camera/module/LiveModuleSubVV;I)V
+    invoke-static {p0, p1}, Lcom/android/camera/module/LiveModuleSubVV;->access$500(Lcom/android/camera/module/LiveModuleSubVV;I)V
 
     return-void
 .end method

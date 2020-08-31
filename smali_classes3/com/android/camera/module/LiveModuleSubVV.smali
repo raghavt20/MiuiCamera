@@ -76,8 +76,6 @@
 
 .field private mOnResumeTime:J
 
-.field protected final mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
 .field private mQuality:I
 
 .field private mSaved:Z
@@ -129,16 +127,9 @@
     iput-object v0, p0, Lcom/android/camera/module/LiveModuleSubVV;->mLifecycleRegistry:Landroid/arch/lifecycle/LifecycleRegistry;
 
     .line 6
-    new-instance v0, Lcom/android/camera/module/LiveModuleSubVV$1;
+    new-instance v0, Lcom/android/camera/module/LiveModuleSubVV$3;
 
-    invoke-direct {v0, p0}, Lcom/android/camera/module/LiveModuleSubVV$1;-><init>(Lcom/android/camera/module/LiveModuleSubVV;)V
-
-    iput-object v0, p0, Lcom/android/camera/module/LiveModuleSubVV;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
-    .line 7
-    new-instance v0, Lcom/android/camera/module/LiveModuleSubVV$4;
-
-    invoke-direct {v0, p0}, Lcom/android/camera/module/LiveModuleSubVV$4;-><init>(Lcom/android/camera/module/LiveModuleSubVV;)V
+    invoke-direct {v0, p0}, Lcom/android/camera/module/LiveModuleSubVV$3;-><init>(Lcom/android/camera/module/LiveModuleSubVV;)V
 
     iput-object v0, p0, Lcom/android/camera/module/LiveModuleSubVV;->mSensorStateListener:Lcom/android/camera/SensorStateManager$SensorStateListener;
 
@@ -204,16 +195,7 @@
     return-void
 .end method
 
-.method static synthetic access$300()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/android/camera/module/LiveModuleSubVV;->TAG:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$502(Lcom/android/camera/module/LiveModuleSubVV;Lio/reactivex/FlowableEmitter;)Lio/reactivex/FlowableEmitter;
+.method static synthetic access$402(Lcom/android/camera/module/LiveModuleSubVV;Lio/reactivex/FlowableEmitter;)Lio/reactivex/FlowableEmitter;
     .locals 0
 
     .line 1
@@ -222,13 +204,22 @@
     return-object p1
 .end method
 
-.method static synthetic access$600(Lcom/android/camera/module/LiveModuleSubVV;I)V
+.method static synthetic access$500(Lcom/android/camera/module/LiveModuleSubVV;I)V
     .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lcom/android/camera/module/LiveModuleSubVV;->consumeAsdSceneResult(I)V
 
     return-void
+.end method
+
+.method static synthetic access$600()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcom/android/camera/module/LiveModuleSubVV;->TAG:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method static synthetic access$700(Lcom/android/camera/module/LiveModuleSubVV;)J
@@ -763,9 +754,9 @@
     .locals 3
 
     .line 1
-    new-instance v0, Lcom/android/camera/module/LiveModuleSubVV$3;
+    new-instance v0, Lcom/android/camera/module/LiveModuleSubVV$2;
 
-    invoke-direct {v0, p0}, Lcom/android/camera/module/LiveModuleSubVV$3;-><init>(Lcom/android/camera/module/LiveModuleSubVV;)V
+    invoke-direct {v0, p0}, Lcom/android/camera/module/LiveModuleSubVV$2;-><init>(Lcom/android/camera/module/LiveModuleSubVV;)V
 
     sget-object v1, Lio/reactivex/BackpressureStrategy;->DROP:Lio/reactivex/BackpressureStrategy;
 
@@ -1178,9 +1169,9 @@
     .line 1
     iget-object v0, p0, Lcom/android/camera/module/BaseModule;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/android/camera/module/LiveModuleSubVV$2;
+    new-instance v1, Lcom/android/camera/module/LiveModuleSubVV$1;
 
-    invoke-direct {v1, p0}, Lcom/android/camera/module/LiveModuleSubVV$2;-><init>(Lcom/android/camera/module/LiveModuleSubVV;)V
+    invoke-direct {v1, p0}, Lcom/android/camera/module/LiveModuleSubVV$1;-><init>(Lcom/android/camera/module/LiveModuleSubVV;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -1339,7 +1330,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/camera/module/LiveModuleSubVV;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    iget-object v1, p0, Lcom/android/camera/module/LiveModuleSubVV;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+    iget-object v1, p0, Lcom/android/camera/module/BaseModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
 
     const/16 v2, 0x20
 
@@ -3831,9 +3822,9 @@
     :cond_0
     iget-object v0, p0, Lcom/android/camera/module/BaseModule;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/android/camera/module/LiveModuleSubVV$5;
+    new-instance v1, Lcom/android/camera/module/LiveModuleSubVV$4;
 
-    invoke-direct {v1, p0, p2, p1}, Lcom/android/camera/module/LiveModuleSubVV$5;-><init>(Lcom/android/camera/module/LiveModuleSubVV;Ljava/lang/String;Landroid/net/Uri;)V
+    invoke-direct {v1, p0, p2, p1}, Lcom/android/camera/module/LiveModuleSubVV$4;-><init>(Lcom/android/camera/module/LiveModuleSubVV;Ljava/lang/String;Landroid/net/Uri;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -5784,7 +5775,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_1
+    if-eqz p2, :cond_2
 
     if-nez p1, :cond_0
 
@@ -5820,7 +5811,24 @@
     .line 9
     invoke-interface {p1}, Lcom/android/camera/protocol/ModeProtocol$RecordState;->onFinish()V
 
+    .line 10
     :cond_1
+    iget-object p1, p0, Lcom/android/camera/module/LiveModuleSubVV;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+
+    iget-object p0, p0, Lcom/android/camera/module/BaseModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+
+    const/4 p2, 0x0
+
+    invoke-virtual {p1, p0, p2}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
+
+    .line 11
+    sget-object p0, Lcom/android/camera/module/LiveModuleSubVV;->TAG:Ljava/lang/String;
+
+    const-string p1, "listen none"
+
+    invoke-static {p0, p1}, Lcom/android/camera/log/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
     :goto_0
     return-void
 .end method

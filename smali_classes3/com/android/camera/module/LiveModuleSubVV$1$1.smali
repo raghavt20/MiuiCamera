@@ -1,6 +1,6 @@
-.class Lcom/android/camera/module/LiveModule$2$1;
+.class Lcom/android/camera/module/LiveModuleSubVV$1$1;
 .super Ljava/lang/Object;
-.source "LiveModule.java"
+.source "LiveModuleSubVV.java"
 
 # interfaces
 .implements Landroid/content/DialogInterface$OnClickListener;
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/camera/module/LiveModule$2;->run()V
+    value = Lcom/android/camera/module/LiveModuleSubVV$1;->run()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,15 +18,15 @@
 
 
 # instance fields
-.field final synthetic this$1:Lcom/android/camera/module/LiveModule$2;
+.field final synthetic this$1:Lcom/android/camera/module/LiveModuleSubVV$1;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/camera/module/LiveModule$2;)V
+.method constructor <init>(Lcom/android/camera/module/LiveModuleSubVV$1;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/android/camera/module/LiveModule$2$1;->this$1:Lcom/android/camera/module/LiveModule$2;
+    iput-object p1, p0, Lcom/android/camera/module/LiveModuleSubVV$1$1;->this$1:Lcom/android/camera/module/LiveModuleSubVV$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,9 +39,9 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/android/camera/module/LiveModule$2$1;->this$1:Lcom/android/camera/module/LiveModule$2;
+    iget-object p0, p0, Lcom/android/camera/module/LiveModuleSubVV$1$1;->this$1:Lcom/android/camera/module/LiveModuleSubVV$1;
 
-    iget-object p0, p0, Lcom/android/camera/module/LiveModule$2;->this$0:Lcom/android/camera/module/LiveModule;
+    iget-object p0, p0, Lcom/android/camera/module/LiveModuleSubVV$1;->this$0:Lcom/android/camera/module/LiveModuleSubVV;
 
     iget-object p0, p0, Lcom/android/camera/module/BaseModule;->mActivity:Lcom/android/camera/Camera;
 

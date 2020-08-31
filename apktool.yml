@@ -1,5 +1,5 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: MiuiCameraA3.apk
+apkFileName: MiuiCamera.apk
 compressionType: false
 doNotCompress:
 - classes.dex

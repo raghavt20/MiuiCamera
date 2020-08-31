@@ -1522,7 +1522,7 @@
 .end method
 
 .method public isOpenOnly(Landroid/app/Activity;)Z
-    .locals 6
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
@@ -1544,15 +1544,14 @@
 
     const/4 v5, 0x1
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
-    :cond_0
     :goto_0
     move v4, v5
 
     goto :goto_1
 
-    :cond_1
+    :cond_0
     const-string v2, "android.intent.action.MAIN"
 
     .line 3
@@ -1560,11 +1559,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     const-string v2, "android.media.action.STILL_IMAGE_CAMERA"
 
     .line 4
@@ -1583,21 +1582,67 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_4
 
     .line 6
+    iget-object v2, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
+
+    invoke-virtual {v2}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
+
+    invoke-virtual {v2}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
+
+    move-result-object v2
+
+    const-string v6, "android.intent.category.VOICE"
+
+    invoke-interface {v2, v6}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-direct {p0, p1}, Lcom/android/camera/CameraIntentManager;->isFromVoice(Landroid/app/Activity;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 7
+    sget-object v2, Lcom/android/camera/CameraIntentManager;->TAG:Ljava/lang/String;
+
+    const-string v6, "from voice root, not open only"
+
+    invoke-static {v2, v6}, Lcom/android/camera/log/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
+
+    .line 8
+    :cond_2
     invoke-virtual {p0}, Lcom/android/camera/CameraIntentManager;->isOnlyForceOpenMainBackCamera()Z
 
     move-result v2
 
     if-eqz v2, :cond_4
 
+    .line 9
+    sget-object v2, Lcom/android/camera/CameraIntentManager;->TAG:Ljava/lang/String;
+
+    const-string v4, "not from voice root, just open"
+
+    invoke-static {v2, v4}, Lcom/android/camera/log/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     goto :goto_0
 
     :cond_3
     const-string v2, "android.media.action.STILL_IMAGE_CAMERA_SECURE"
 
-    .line 7
+    .line 10
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -1606,7 +1651,7 @@
 
     goto :goto_0
 
-    .line 8
+    .line 11
     :cond_4
     :goto_1
     invoke-virtual {p0}, Lcom/android/camera/CameraIntentManager;->getCaller()Ljava/lang/String;
@@ -1619,16 +1664,23 @@
 
     if-eqz v2, :cond_5
 
-    .line 9
+    .line 12
     invoke-direct {p0, p1}, Lcom/android/camera/CameraIntentManager;->isFromVoice(Landroid/app/Activity;)Z
 
     move-result p1
 
     if-nez p1, :cond_7
 
+    .line 13
+    sget-object p0, Lcom/android/camera/CameraIntentManager;->TAG:Ljava/lang/String;
+
+    const-string p1, "just open only"
+
+    invoke-static {p0, p1}, Lcom/android/camera/log/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     return v5
 
-    .line 10
+    .line 14
     :cond_5
     invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -1638,7 +1690,7 @@
 
     return v5
 
-    .line 11
+    .line 15
     :cond_6
     iget-object p1, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
 
@@ -1648,7 +1700,7 @@
 
     if-eqz p1, :cond_8
 
-    .line 12
+    .line 16
     invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
     move-result-object p1
@@ -1663,7 +1715,7 @@
 
     goto :goto_2
 
-    .line 13
+    .line 17
     :cond_7
     iget-object p0, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
 

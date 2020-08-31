@@ -2068,7 +2068,7 @@ Name: res/drawable-hdpi-v4/notification_bg_low_pressed.9.png
 SHA-256-Digest: Qq7gsDiD6U315UM0ijl9EwLBuCIYlYcag7gYmfWpZHs=
 
 Name: classes.dex
-SHA-256-Digest: NutAEm8TQVlPacTBcVBKGqfn6R0zYDAgJju9L9Um4fw=
+SHA-256-Digest: mhYa3WmmyMpgKFaz3pYFyu6QHgoqLEuX0G3zkg3jjFs=
 
 Name: res/drawable-xxxhdpi-v4/ic_exposure_sun.webp
 SHA-256-Digest: pllEGcdrKMIMACCCAVytNJvdiWPg9szVl+D41GopzJU=
@@ -3715,7 +3715,7 @@ Name: res/drawable-xxhdpi-v4/ic_config_scene.webp
 SHA-256-Digest: Eq6rOCspfKM+FZV26esUo/Bci6Wakk5vT3qax8rZvNw=
 
 Name: classes2.dex
-SHA-256-Digest: 0iISqzOEDV+Axku+c0R2gnTi5Z3WdCiZc2pJYF41HX4=
+SHA-256-Digest: G77RtGr3KCLDVUmIOQRKSU2EIjU4eU0QIm3uR2rcNm4=
 
 Name: res/drawable-xhdpi-v4/color_effect_live_hongkong.webp
 SHA-256-Digest: QZLytTbGECFdNuU+cmHmyVU4NH2VtgQwg4N90CKwIZc=
@@ -5845,7 +5845,7 @@ Name: res/drawable-440dpi-v4/ic_camera_mode_exit_button_full.9.png
 SHA-256-Digest: 1GZPCrM7Vda86wYR7QvBVf28hUDE8vrgBXMqWveJdXo=
 
 Name: res/layout/fragment_dialog_manually_description.xml
-SHA-256-Digest: GlyYSb1dweTBir/Q5Ka3aaN4djQWSNQAwA0yS2JVSZY=
+SHA-256-Digest: dY7ype6eQmx0XX+4WGzwj5PiZEfITh/zetbPSP2496Y=
 
 Name: assets/filter/normal/N-CLASSIC.png
 SHA-256-Digest: k8RCaiwzcVQvHjnCKsXrE7wou40jkaaRXYG2QNIv69Q=
@@ -6467,7 +6467,7 @@ Name: res/drawable-xhdpi-v4/video_filter_central.webp
 SHA-256-Digest: fWK9AhTwYWv/57gFeZFe3/FEPZfZZlNn/9AecaZelE8=
 
 Name: resources.arsc
-SHA-256-Digest: j192/MewSI4+d9RbzekKVE2uYM/ggqwT2Io9zGELTms=
+SHA-256-Digest: i8+NuZU54md/6d6xpw0Q1LsAxm2bXCvZjwnly05Vz8I=
 
 Name: res/drawable-440dpi-v4/ic_menu_macro_mode_off.webp
 SHA-256-Digest: Gsg/dAVQtL0RbctmXlk98OVq5PpUoN514bw+Q7VsJkc=
@@ -8325,7 +8325,7 @@ Name: res/drawable-xxxhdpi-v4/ic_ai_scene_side_face.webp
 SHA-256-Digest: Z5KbLAIo1lUFddH28HqCVjTijCQ5o5SjBpEiWre7Zw4=
 
 Name: classes3.dex
-SHA-256-Digest: JaaZTsU4H3sI9qa3wOo8X3hnxTBT2Mc0WItjwfTcuLE=
+SHA-256-Digest: dCffl5Z4NWFXJ+bCwQc7G8fu97S7goVjL7RKP2UUnEQ=
 
 Name: assets/filter/sticker/S-YEARS.png
 SHA-256-Digest: kcQCB8TQV3c47AZvHp8190M/3IHqPeqvIMpah7HMzLc=

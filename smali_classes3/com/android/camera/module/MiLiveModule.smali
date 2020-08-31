@@ -73,8 +73,6 @@
 
 .field private mOnResumeTime:J
 
-.field protected final mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
 .field private mRecorderListener:Lcom/android/camera/protocol/ModeProtocol$MiLiveRecorderControl$IRecorderListener;
 
 .field protected mSensorStateListener:Lcom/android/camera/SensorStateManager$SensorStateListener;
@@ -145,19 +143,12 @@
 
     invoke-direct {v0, p0}, Lcom/android/camera/module/MiLiveModule$1;-><init>(Lcom/android/camera/module/MiLiveModule;)V
 
-    iput-object v0, p0, Lcom/android/camera/module/MiLiveModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+    iput-object v0, p0, Lcom/android/camera/module/MiLiveModule;->mRecorderListener:Lcom/android/camera/protocol/ModeProtocol$MiLiveRecorderControl$IRecorderListener;
 
     .line 6
     new-instance v0, Lcom/android/camera/module/MiLiveModule$2;
 
     invoke-direct {v0, p0}, Lcom/android/camera/module/MiLiveModule$2;-><init>(Lcom/android/camera/module/MiLiveModule;)V
-
-    iput-object v0, p0, Lcom/android/camera/module/MiLiveModule;->mRecorderListener:Lcom/android/camera/protocol/ModeProtocol$MiLiveRecorderControl$IRecorderListener;
-
-    .line 7
-    new-instance v0, Lcom/android/camera/module/MiLiveModule$3;
-
-    invoke-direct {v0, p0}, Lcom/android/camera/module/MiLiveModule$3;-><init>(Lcom/android/camera/module/MiLiveModule;)V
 
     iput-object v0, p0, Lcom/android/camera/module/MiLiveModule;->mSensorStateListener:Lcom/android/camera/SensorStateManager$SensorStateListener;
 
@@ -232,20 +223,20 @@
     return-void
 .end method
 
-.method static synthetic access$300(Lcom/android/camera/module/MiLiveModule;)Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/android/camera/module/MiLiveModule;->TAG:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method static synthetic access$500(Lcom/android/camera/module/MiLiveModule;)Lcom/android/camera/protocol/ModeProtocol$MiLiveConfigChanges;
+.method static synthetic access$400(Lcom/android/camera/module/MiLiveModule;)Lcom/android/camera/protocol/ModeProtocol$MiLiveConfigChanges;
     .locals 0
 
     .line 1
     iget-object p0, p0, Lcom/android/camera/module/MiLiveModule;->mLiveConfigChanges:Lcom/android/camera/protocol/ModeProtocol$MiLiveConfigChanges;
+
+    return-object p0
+.end method
+
+.method static synthetic access$500(Lcom/android/camera/module/MiLiveModule;)Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/android/camera/module/MiLiveModule;->TAG:Ljava/lang/String;
 
     return-object p0
 .end method
@@ -1959,7 +1950,7 @@
     .line 14
     iget-object v0, p0, Lcom/android/camera/module/MiLiveModule;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    iget-object v1, p0, Lcom/android/camera/module/MiLiveModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+    iget-object v1, p0, Lcom/android/camera/module/BaseModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
 
     const/16 v2, 0x20
 

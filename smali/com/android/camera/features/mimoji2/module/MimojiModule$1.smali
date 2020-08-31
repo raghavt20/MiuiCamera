@@ -1,16 +1,28 @@
 .class Lcom/android/camera/features/mimoji2/module/MimojiModule$1;
-.super Landroid/telephony/PhoneStateListener;
+.super Ljava/lang/Object;
 .source "MimojiModule.java"
+
+# interfaces
+.implements Lio/reactivex/FlowableOnSubscribe;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/camera/features/mimoji2/module/MimojiModule;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/camera/features/mimoji2/module/MimojiModule;->initMetaParser()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x0
     name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lio/reactivex/FlowableOnSubscribe<",
+        "Landroid/hardware/camera2/CaptureResult;",
+        ">;"
+    }
 .end annotation
 
 
@@ -25,46 +37,34 @@
     .line 1
     iput-object p1, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule$1;->this$0:Lcom/android/camera/features/mimoji2/module/MimojiModule;
 
-    invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onCallStateChanged(ILjava/lang/String;)V
-    .locals 2
+.method public subscribe(Lio/reactivex/FlowableEmitter;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lio/reactivex/FlowableEmitter<",
+            "Landroid/hardware/camera2/CaptureResult;",
+            ">;)V"
+        }
+    .end annotation
 
-    const/4 v0, 0x2
-
-    if-ne p1, v0, :cond_0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule$1;->this$0:Lcom/android/camera/features/mimoji2/module/MimojiModule;
+    iget-object p0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule$1;->this$0:Lcom/android/camera/features/mimoji2/module/MimojiModule;
 
-    invoke-virtual {v0}, Lcom/android/camera/features/mimoji2/module/MimojiModule;->isRecording()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    invoke-static {}, Lcom/android/camera/features/mimoji2/module/MimojiModule;->access$1200()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "CALL_STATE_OFFHOOK"
-
-    invoke-static {v0, v1}, Lcom/android/camera/log/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3
-    iget-object v0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule$1;->this$0:Lcom/android/camera/features/mimoji2/module/MimojiModule;
-
-    invoke-virtual {v0}, Lcom/android/camera/features/mimoji2/module/MimojiModule;->onStop()V
-
-    .line 4
-    :cond_0
-    invoke-super {p0, p1, p2}, Landroid/telephony/PhoneStateListener;->onCallStateChanged(ILjava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/android/camera/features/mimoji2/module/MimojiModule;->access$1302(Lcom/android/camera/features/mimoji2/module/MimojiModule;Lio/reactivex/FlowableEmitter;)Lio/reactivex/FlowableEmitter;
 
     return-void
 .end method

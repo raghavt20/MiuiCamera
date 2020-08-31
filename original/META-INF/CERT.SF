@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 X-Android-APK-Signed: 2
-SHA-256-Digest-Manifest: jD5H3NQjEEjv8QT7TjQm0WYTpZB6/UvaEI8hJYkLTEI=
+SHA-256-Digest-Manifest: bs10Mfx/xfWAjVG6TJM7aeA+S4xeFhBseuc2FMhcWus=
 Created-By: 1.0 (Android SignApk)
 
 Name: assets/filter/aiscene/A-DOC_INDIA.png
@@ -2070,7 +2070,7 @@ Name: res/drawable-hdpi-v4/notification_bg_low_pressed.9.png
 SHA-256-Digest: 4RlHlyDIzTYG5Klg5AKe0Fi4c3z+iVWMOHgAh9ZL7Aw=
 
 Name: classes.dex
-SHA-256-Digest: SlpUgxhgp4HXv1P9Z0wKwAdRWflQ7RsCc+2cN1O5KtM=
+SHA-256-Digest: zzBQ8V3fmD7kWlJqnrtsnU5peUAQZSdABiY3UuGyQxY=
 
 Name: res/drawable-xxxhdpi-v4/ic_exposure_sun.webp
 SHA-256-Digest: YGjNF7xUzcW7P0w1l9iBpg3MWHuq2fyqcubrbzq7Lro=
@@ -3717,7 +3717,7 @@ Name: res/drawable-xxhdpi-v4/ic_config_scene.webp
 SHA-256-Digest: fTBKQ7z6ZWM1IL7Qk7tCWAVnJDvmMkkVbvhA35XwnKs=
 
 Name: classes2.dex
-SHA-256-Digest: df3OjgJNFqloBXz18WWucbg2E4rLGpLDS2C9V8nrrIo=
+SHA-256-Digest: RXZiielepW8g7fgIwnuxc6lMci/gDhOmLzFrOH71I1w=
 
 Name: res/drawable-xhdpi-v4/color_effect_live_hongkong.webp
 SHA-256-Digest: YrDe/p5F7DGhX4NcToo8bU4LtJZZY1LgtttmupkDkSs=
@@ -5847,7 +5847,7 @@ Name: res/drawable-440dpi-v4/ic_camera_mode_exit_button_full.9.png
 SHA-256-Digest: /pAETB1LPGeQQ0JkPhvNXla480rMsEf0QXyLE4uRUG4=
 
 Name: res/layout/fragment_dialog_manually_description.xml
-SHA-256-Digest: YofcJ1EBzmXLq2l5SGCcMUBVDfNgife5ICnoi8sKpXo=
+SHA-256-Digest: u5Y+fgLPGLXjY1uYnuBG/gvSC7NwrC8GQB5QZeMt3yY=
 
 Name: assets/filter/normal/N-CLASSIC.png
 SHA-256-Digest: FPYsP+bBkytDa897vEBhcKgn55RYmzGepkyRSoyDrEo=
@@ -6469,7 +6469,7 @@ Name: res/drawable-xhdpi-v4/video_filter_central.webp
 SHA-256-Digest: GqP5xWF+Zw0fvWn8l+4QVGTSj3JisrmTBett95kUsXo=
 
 Name: resources.arsc
-SHA-256-Digest: LigIWLGF3GC299Vy4ajKfKdUUbGlsJ1cbVdDpevzas8=
+SHA-256-Digest: jPL3lqNeXaITKUoSWwnXfNiXS1/5AjqPJc1vVn/EDC8=
 
 Name: res/drawable-440dpi-v4/ic_menu_macro_mode_off.webp
 SHA-256-Digest: I6ZG0dmMzQacvieZ3rCNoQAr3wfOrhGWtuShltyS9CQ=
@@ -8327,7 +8327,7 @@ Name: res/drawable-xxxhdpi-v4/ic_ai_scene_side_face.webp
 SHA-256-Digest: ljW4LMPOW3dw5UrAD8j3gg7tpaS/iBAwvisjYEzeuNM=
 
 Name: classes3.dex
-SHA-256-Digest: Pj+AVKbhqKdzG/zCFex9FSkU2lsElm6Kwttlxx/SgrI=
+SHA-256-Digest: LRhyBdctYZkamnnaXW3eSkiBYnMPYqlN6bFJdvX83K8=
 
 Name: assets/filter/sticker/S-YEARS.png
 SHA-256-Digest: bhQtVYP0ufY6m1mPzb7NxVHIFzdeQS44Wyoy/ircIKU=

@@ -64,7 +64,7 @@
     .line 2
     iget-object p0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule$LiveAsdConsumer;->this$0:Lcom/android/camera/features/mimoji2/module/MimojiModule;
 
-    invoke-static {p0, p1}, Lcom/android/camera/features/mimoji2/module/MimojiModule;->access$1500(Lcom/android/camera/features/mimoji2/module/MimojiModule;Ljava/lang/Integer;)V
+    invoke-static {p0, p1}, Lcom/android/camera/features/mimoji2/module/MimojiModule;->access$1400(Lcom/android/camera/features/mimoji2/module/MimojiModule;Ljava/lang/Integer;)V
 
     return-void
 .end method

@@ -73,8 +73,6 @@
 
 .field private mOnResumeTime:J
 
-.field protected final mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
 .field private mQuality:I
 
 .field private mRecordTime:J
@@ -126,16 +124,9 @@
     iput v0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->mDeviceOrientation:I
 
     .line 6
-    new-instance v0, Lcom/android/camera/features/mimoji2/module/MimojiModule$1;
+    new-instance v0, Lcom/android/camera/features/mimoji2/module/MimojiModule$3;
 
-    invoke-direct {v0, p0}, Lcom/android/camera/features/mimoji2/module/MimojiModule$1;-><init>(Lcom/android/camera/features/mimoji2/module/MimojiModule;)V
-
-    iput-object v0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
-    .line 7
-    new-instance v0, Lcom/android/camera/features/mimoji2/module/MimojiModule$4;
-
-    invoke-direct {v0, p0}, Lcom/android/camera/features/mimoji2/module/MimojiModule$4;-><init>(Lcom/android/camera/features/mimoji2/module/MimojiModule;)V
+    invoke-direct {v0, p0}, Lcom/android/camera/features/mimoji2/module/MimojiModule$3;-><init>(Lcom/android/camera/features/mimoji2/module/MimojiModule;)V
 
     iput-object v0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->mSensorStateListener:Lcom/android/camera/SensorStateManager$SensorStateListener;
 
@@ -212,16 +203,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$1200()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->TAG:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1402(Lcom/android/camera/features/mimoji2/module/MimojiModule;Lio/reactivex/FlowableEmitter;)Lio/reactivex/FlowableEmitter;
+.method static synthetic access$1302(Lcom/android/camera/features/mimoji2/module/MimojiModule;Lio/reactivex/FlowableEmitter;)Lio/reactivex/FlowableEmitter;
     .locals 0
 
     .line 1
@@ -230,13 +212,22 @@
     return-object p1
 .end method
 
-.method static synthetic access$1500(Lcom/android/camera/features/mimoji2/module/MimojiModule;Ljava/lang/Integer;)V
+.method static synthetic access$1400(Lcom/android/camera/features/mimoji2/module/MimojiModule;Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lcom/android/camera/features/mimoji2/module/MimojiModule;->mimojiLightDetect(Ljava/lang/Integer;)V
 
     return-void
+.end method
+
+.method static synthetic access$1500()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->TAG:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method static synthetic access$1600(Lcom/android/camera/features/mimoji2/module/MimojiModule;)I
@@ -539,9 +530,9 @@
     .locals 3
 
     .line 1
-    new-instance v0, Lcom/android/camera/features/mimoji2/module/MimojiModule$2;
+    new-instance v0, Lcom/android/camera/features/mimoji2/module/MimojiModule$1;
 
-    invoke-direct {v0, p0}, Lcom/android/camera/features/mimoji2/module/MimojiModule$2;-><init>(Lcom/android/camera/features/mimoji2/module/MimojiModule;)V
+    invoke-direct {v0, p0}, Lcom/android/camera/features/mimoji2/module/MimojiModule$1;-><init>(Lcom/android/camera/features/mimoji2/module/MimojiModule;)V
 
     sget-object v1, Lio/reactivex/BackpressureStrategy;->DROP:Lio/reactivex/BackpressureStrategy;
 
@@ -1553,7 +1544,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    iget-object v1, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+    iget-object v1, p0, Lcom/android/camera/module/BaseModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
 
     const/16 v2, 0x20
 
@@ -2016,9 +2007,9 @@
     :cond_0
     iget-object v1, p0, Lcom/android/camera/module/BaseModule;->mHandler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/android/camera/features/mimoji2/module/MimojiModule$3;
+    new-instance v2, Lcom/android/camera/features/mimoji2/module/MimojiModule$2;
 
-    invoke-direct {v2, p0, v0}, Lcom/android/camera/features/mimoji2/module/MimojiModule$3;-><init>(Lcom/android/camera/features/mimoji2/module/MimojiModule;Z)V
+    invoke-direct {v2, p0, v0}, Lcom/android/camera/features/mimoji2/module/MimojiModule$2;-><init>(Lcom/android/camera/features/mimoji2/module/MimojiModule;Z)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -6826,19 +6817,35 @@
 .method public stopVideoRecording(Z)V
     .locals 4
 
+    .line 1
+    iget-object v0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+
+    iget-object v1, p0, Lcom/android/camera/module/BaseModule;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
+
+    .line 2
+    sget-object v0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->TAG:Ljava/lang/String;
+
+    const-string v1, "listen none"
+
+    invoke-static {v0, v1}, Lcom/android/camera/log/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
     if-eqz p1, :cond_0
 
-    .line 1
+    .line 3
     iget-object v0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->mimojiAvatarEngine2:Lcom/android/camera/features/mimoji2/module/impl/MimojiAvatarEngine2Impl;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/features/mimoji2/module/impl/MimojiAvatarEngine2Impl;->onRecordStop(Z)V
 
-    .line 2
+    .line 4
     invoke-virtual {p0}, Lcom/android/camera/features/mimoji2/module/MimojiModule;->onReviewCancelClicked()V
 
     return-void
 
-    .line 3
+    .line 5
     :cond_0
     iget-object v0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->mMimojiVideoEditor:Lcom/android/camera/features/mimoji2/module/protocol/MimojiModeProtocol$MimojiVideoEditor;
 
@@ -6852,7 +6859,7 @@
 
     invoke-interface {v0, v2, v1, v3}, Lcom/android/camera/features/mimoji2/module/protocol/MimojiModeProtocol$MimojiVideoEditor;->setRecordParameter(III)V
 
-    .line 4
+    .line 6
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -6869,13 +6876,13 @@
 
     return-void
 
-    .line 5
+    .line 7
     :cond_1
     iget-object v0, p0, Lcom/android/camera/features/mimoji2/module/MimojiModule;->mimojiAvatarEngine2:Lcom/android/camera/features/mimoji2/module/impl/MimojiAvatarEngine2Impl;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/features/mimoji2/module/impl/MimojiAvatarEngine2Impl;->onRecordStop(Z)V
 
-    .line 6
+    .line 8
     invoke-direct {p0}, Lcom/android/camera/features/mimoji2/module/MimojiModule;->showPreview()V
 
     return-void

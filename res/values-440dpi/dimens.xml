@@ -39,7 +39,7 @@
     <dimen name="beautycamera_beauty_fragment_tab_height">49.125977dip</dimen>
     <dimen name="beautycamera_beauty_level_item_margin">10.899994dip</dimen>
     <dimen name="beautycamera_beauty_level_item_size">40.0dip</dimen>
-    <dimen name="beautycamera_beauty_params_level_seekbar_width">353.09375dip</dimen>
+    <dimen name="beautycamera_beauty_params_level_seekbar_width">305.4453dip</dimen>
     <dimen name="beautycamera_beauty_popup_icon_padding">21.779999dip</dimen>
     <dimen name="beautycamera_effect_close_btn_height">28.599976dip</dimen>
     <dimen name="beautycamera_effect_tab_margin">22.362976dip</dimen>
@@ -281,10 +281,10 @@
     <dimen name="parameter_description_item_title_text_size">14.0sp</dimen>
     <dimen name="parameter_description_line_margin_left">27.329987dip</dimen>
     <dimen name="parameter_description_split_view_margin_top">-12.0dip</dimen>
-    <dimen name="parameter_description_sub_title_margin_top">169.0dip</dimen>
+    <dimen name="parameter_description_sub_title_margin_top">11.329987dip</dimen>
     <dimen name="parameter_description_sub_title_text_size">11.329987sp</dimen>
     <dimen name="parameter_description_title_height">256.32812dip</dimen>
-    <dimen name="parameter_description_title_margin_top">134.32999dip</dimen>
+    <dimen name="parameter_description_title_margin_top">130.32999dip</dimen>
     <dimen name="parameter_description_title_text_size">18.669983sp</dimen>
     <dimen name="parameter_reset_margin_top">29.329987dip</dimen>
     <dimen name="popup_tip_beauty_intro_icon_size">13.089996dip</dimen>

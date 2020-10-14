@@ -331,7 +331,7 @@
     <!--whether sensor_has_latency-->
     <bool name="sensor_has_latency">true</bool>
     <!-- whether camera supports paralell process -->
-    <bool name="support_parallel_process">true</bool>
+    <bool name="support_parallel_process">false</bool>
     <!--whether enable face detection in video and funmode or not-->
     <bool name="support_camera_video_face_detection">true</bool>
     <!--camera max quality which support high frame rate,1:480 2:720 3:1080-->

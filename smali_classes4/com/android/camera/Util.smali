@@ -311,7 +311,7 @@
 
     sput-object v0, Lcom/android/camera/Util;->COLOR_TEMPERATURE_MAP:Ljava/util/List;
 
-    const-string v0, "other_space"
+    const-string v0, "other_space_micam"
 
     .line 4
     sput-object v0, Lcom/android/camera/Util;->WATERMARK_SPACE:Ljava/lang/String;
@@ -323,7 +323,7 @@
 
     if-nez v0, :cond_0
 
-    const-string v0, "main_space"
+    const-string v0, "main_space_micam"
 
     .line 6
     sput-object v0, Lcom/android/camera/Util;->WATERMARK_SPACE:Ljava/lang/String;

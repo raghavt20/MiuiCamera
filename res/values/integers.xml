@@ -9,8 +9,8 @@
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="capture_progress_delay_time">400</integer>
     <integer name="config_tooltipAnimTime">150</integer>
-    <integer name="custom_watermark_startx">350</integer>
-    <integer name="custom_watermark_starty">100</integer>
+    <integer name="custom_watermark_startx">197</integer>
+    <integer name="custom_watermark_starty">106</integer>
     <integer name="default_manual_whitebalance_value">4200</integer>
     <integer name="front_lens_orientation">90</integer>
     <integer name="front_pref_video_time_lapse_frame_interval_default">300</integer>

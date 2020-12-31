@@ -415,5 +415,5 @@
     <!-- whether this device is Android one -->
     <bool name="is_android_one_device">true</bool>
     <!-- whether camera supports paralell process -->
-    <bool name="support_parallel_process">true</bool>
+    <bool name="support_parallel_process">false</bool>
 </features>

@@ -197,9 +197,9 @@
     <dimen name="compat_notification_large_icon_max_width">320.0dip</dimen>
     <dimen name="config_extra_item_text_size">10.199982sp</dimen>
     <item type="dimen" name="custom_watermark_height_scale">1.23</item>
-    <item type="dimen" name="custom_watermark_letter_spacing">0.05</item>
-    <item type="dimen" name="custom_watermark_pandingY_scale">0.87</item>
-    <item type="dimen" name="custom_watermark_text_size_ratio">1.0</item>
+    <item type="dimen" name="custom_watermark_letter_spacing">0.02</item>
+    <item type="dimen" name="custom_watermark_pandingY_scale">0.82</item>
+    <item type="dimen" name="custom_watermark_text_size_ratio">0.94</item>
     <dimen name="def_drawer_elevation">10.0dip</dimen>
     <dimen name="dimen_gif_et_gif_words_margin_horizontal">16.0dip</dimen>
     <dimen name="dimen_gif_et_gif_words_margin_vertical">-8.0dip</dimen>

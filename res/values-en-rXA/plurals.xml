@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_focus_face_detect">
+        <item quantity="other">[Föçûšéð. »%d« ƒåçéš ðéţéçţéð one two three]</item>
+        <item quantity="one">[Föçûšéð. »%d« ƒåçé ðéţéçţéð one two three]</item>
+    </plurals>
+    <plurals name="toast_burst_snap_finished_summary">
+        <item quantity="other">[βûŕšţ šĥöţ ðöñé, »%1$s« þĥöţöš ţåķéñ one two three four]</item>
+        <item quantity="one">[βûŕšţ šĥöţ ðöñé, »%1$s« þĥöţö ţåķéñ one two three four]</item>
+    </plurals>
+</resources>

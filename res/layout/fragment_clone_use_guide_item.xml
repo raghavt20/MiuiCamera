@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="1630.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="@dimen/clone_guide_video_width" android:layout_height="@dimen/clone_guide_video_height" android:layout_marginLeft="244.0px" android:layout_marginTop="@dimen/clone_guide_video_margin_top">
+        <com.android.camera.videoplayer.ui.VideoPlayerView android:id="@id/clone_guide_texture_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/clone_guide_video_colver" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/clone_guide_photo_cover" />
+    </FrameLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="182.0dip" android:layout_marginTop="18.199982dip" android:layout_marginBottom="18.199982dip">
+        <TextView android:textSize="29.099976sp" android:textColor="@color/white" android:id="@id/clone_guide_tv1" android:layout_width="182.0dip" android:layout_height="38.899994dip" android:layout_marginLeft="540.0px" android:layout_marginTop="196.0px" android:text="@string/clone_guide_title1" android:rotation="90.0" />
+        <TextView android:textSize="20.399994sp" android:textColor="@color/white" android:id="@id/clone_guide_tv2" android:layout_width="182.0dip" android:layout_height="26.899994dip" android:layout_marginLeft="440.0px" android:layout_marginTop="213.0px" android:text="@string/clone_guide_title2" android:rotation="90.0" />
+        <LinearLayout android:orientation="vertical" android:layout_width="182.0dip" android:layout_height="88.69998dip" android:layout_marginLeft="100.0px" android:layout_marginTop="128.0px" android:rotation="90.0">
+            <TextView android:textSize="@dimen/clone_guide_tip_font_size" android:textColor="@color/white" android:id="@id/clone_guide_tip_tv1" android:layout_width="fill_parent" android:layout_height="0.0px" android:text="@string/clone_guide_tip1" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/clone_guide_tip_font_size" android:textColor="@color/white" android:id="@id/clone_guide_tip_tv2" android:layout_width="fill_parent" android:layout_height="0.0px" android:text="@string/clone_guide_tip2" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/clone_guide_tip_font_size" android:textColor="@color/white" android:id="@id/clone_guide_tip_tv3" android:layout_width="fill_parent" android:layout_height="0.0px" android:text="@string/clone_guide_tip3" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/clone_guide_tip_font_size" android:textColor="@color/white" android:id="@id/clone_guide_tip_tv4" android:layout_width="fill_parent" android:layout_height="0.0px" android:text="@string/clone_guide_tip4" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

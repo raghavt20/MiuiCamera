@@ -143,6 +143,7 @@
         <provider android:authorities="com.android.camera.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
         </provider>
+        <provider android:authorities="com.xiaomi.camera.parallelservice.provider.SpecialTypesProvider" android:exported="true" android:grantUriPermissions="true" android:name="com.xiaomi.camera.parallelservice.provider.ParallelProcessProvider" android:syncable="false"/>
         <meta-data android:name="aia-compat-api-min-version" android:value="1"/>
     </application>
 </manifest>

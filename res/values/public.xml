@@ -3303,6 +3303,7 @@
     <public type="raw" name="xiaomi_static_config" id="0x7f0f0005" />
     <public type="raw" name="feature_ginkgo" id="0x7f0f0006" />
     <public type="raw" name="feature_willow" id="0x7f0f0007" />
+    <public type="raw" name="feature_violet" id="0x7f0f0008" />
     <public type="string" name="abc_action_bar_home_description" id="0x7f100000" />
     <public type="string" name="abc_action_bar_up_description" id="0x7f100001" />
     <public type="string" name="abc_action_menu_overflow_description" id="0x7f100002" />

@@ -1,5 +1,5 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: MiuiCamera.apk
+apkFileName: MiuiCameraA3.apk
 compressionType: false
 doNotCompress:
 - classes.dex
@@ -2212,7 +2212,7 @@ usesFramework:
   ids:
   - 1
   tag: null
-version: 2.4.1
+version: 2.5.0
 versionInfo:
   versionCode: '3'
   versionName: 3.0.200116

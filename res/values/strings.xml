@@ -1202,7 +1202,7 @@ to record and edit videos on the go"</string>
     <string name="wideselfie_rotate_to_front">Tilt the phone forward</string>
     <string name="wideselfie_rotate_to_left_slowly">Rotate the phone to the left</string>
     <string name="wideselfie_rotate_to_right_slowly">Rotate the phone to the right</string>
-    <item type="string" name="APKTOOL_DUMMY_3">false</item>
-    <item type="string" name="APKTOOL_DUMMY_11">false</item>
-    <item type="string" name="APKTOOL_DUMMY_4a">false</item>
+    <string name="APKTOOL_DUMMY_3" />
+    <string name="APKTOOL_DUMMY_11" />
+    <string name="APKTOOL_DUMMY_4a" />
 </resources>
